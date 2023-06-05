@@ -1,0 +1,26 @@
+repos:
+-   repo: https://github.com/ambv/black
+    rev: 23.3.0
+    hooks:
+    - id: black
+      language_version: python3.11.3
+      stages: [commit]
+-   repo: https://github.com/pycqa/flake8
+    rev: 6.0.0
+    hooks:
+    - id: flake8
+      stages: [commit]
+-   repo: https://github.com/PyCQA/isort
+    rev: 5.12.0
+    hooks:
+    - id: isort
+      args: ["--profile", "black"]
+      stages: [commit]
+-   repo: local
+    hooks:
+      - id: requirements
+        name: requirements
+        entry: bash -c 'pipenv requirements > requirements.txt; git add requirements.txt' 
+        language: system
+        pass_filenames: false
+        stages: [commit]
