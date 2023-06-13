@@ -1,0 +1,8 @@
+confluent-kafka
+jsonschema
+requests
+fastavro
+pandas
+pyarrow
+python-dotenv
+unidecode

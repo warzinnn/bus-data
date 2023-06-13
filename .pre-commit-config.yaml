@@ -16,11 +16,3 @@ repos:
     - id: isort
       args: ["--profile", "black"]
       stages: [commit]
--   repo: local
-    hooks:
-      - id: requirements
-        name: requirements
-        entry: bash -c 'pipenv requirements > requirements.txt; git add requirements.txt' 
-        language: system
-        pass_filenames: false
-        stages: [commit]
