@@ -1,0 +1,10 @@
+.env
+__pycache__
+.google
+*.backup
+*.tfstate
+*.hcl
+.terraform
+test.py
+.tmp
+.dbt_profile
