@@ -6,3 +6,4 @@ pandas
 pyarrow
 python-dotenv
 unidecode
+google-cloud-storage

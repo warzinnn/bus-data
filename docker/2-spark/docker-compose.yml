@@ -38,6 +38,7 @@ services:
       - SPARK_EXECUTOR_MEMORY=1G
       - SPARK_WORKLOAD=worker
       - SPARK_LOCAL_IP=spark-worker-1
+      - GOOGLE_APPLICATION_CREDENTIALS=${GOOGLE_APPLICATION_CREDENTIALS}
     ports:
       - 8083:8081
     networks:

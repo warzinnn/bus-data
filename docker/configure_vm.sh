@@ -3,7 +3,7 @@
 # CONFIGURING VM IN GOOGLE COMPUTE ENGINE
 
 sudo apt-get update &&
-sudo apt-get install -y docker.io &&
+sudo apt-get install -y docker.io python3-pip &&
 mkdir ${HOME}/bin &&
 wget https://github.com/docker/compose/releases/download/v2.18.1/docker-compose-linux-x86_64 -O docker-compose &&
 chmod +x docker-compose &&
@@ -13,4 +13,5 @@ echo 'export PATH="${HOME}/bin:${PATH}"' >> ~/.bashrc &&
 source ${HOME}/.bashrc &&
 sudo groupadd docker &&
 sudo gpasswd -a $USER docker &&
-sudo service docker restart
+sudo service docker restart &&
+sudo pip3 install pipenv
