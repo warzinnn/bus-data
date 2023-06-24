@@ -1,0 +1,91 @@
+[2023-06-23T21:32:18.168+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: running-buses-clean-files-dag.clean-gcp-files manual__2023-06-23T21:29:14.558361+00:00 [queued]>
+[2023-06-23T21:32:18.174+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: running-buses-clean-files-dag.clean-gcp-files manual__2023-06-23T21:29:14.558361+00:00 [queued]>
+[2023-06-23T21:32:18.175+0000] {taskinstance.py:1308} INFO - Starting attempt 3 of 3
+[2023-06-23T21:32:18.184+0000] {taskinstance.py:1327} INFO - Executing <Task(_PythonVirtualenvDecoratedOperator): clean-gcp-files> on 2023-06-23 21:29:14.558361+00:00
+[2023-06-23T21:32:18.190+0000] {standard_task_runner.py:57} INFO - Started process 423 to run task
+[2023-06-23T21:32:18.194+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'running-buses-clean-files-dag', 'clean-gcp-files', 'manual__2023-06-23T21:29:14.558361+00:00', '--job-id', '521', '--raw', '--subdir', 'DAGS_FOLDER/running_buses_clean_files.py', '--cfg-path', '/tmp/tmprpz2ts0g']
+[2023-06-23T21:32:18.197+0000] {standard_task_runner.py:85} INFO - Job 521: Subtask clean-gcp-files
+[2023-06-23T21:32:18.245+0000] {task_command.py:410} INFO - Running <TaskInstance: running-buses-clean-files-dag.clean-gcp-files manual__2023-06-23T21:29:14.558361+00:00 [running]> on host 6bba1fead03c
+[2023-06-23T21:32:18.305+0000] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='running-buses-clean-files-dag' AIRFLOW_CTX_TASK_ID='clean-gcp-files' AIRFLOW_CTX_EXECUTION_DATE='2023-06-23T21:29:14.558361+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-06-23T21:29:14.558361+00:00'
+[2023-06-23T21:32:18.308+0000] {process_utils.py:181} INFO - Executing cmd: /usr/local/bin/python -m virtualenv /tmp/venv5sn2vrax
+[2023-06-23T21:32:18.311+0000] {process_utils.py:185} INFO - Output:
+[2023-06-23T21:32:18.808+0000] {process_utils.py:189} INFO - created virtual environment CPython3.11.4.final.0-64 in 211ms
+[2023-06-23T21:32:18.810+0000] {process_utils.py:189} INFO -   creator CPython3Posix(dest=/tmp/venv5sn2vrax, clear=False, no_vcs_ignore=False, global=False)
+[2023-06-23T21:32:18.811+0000] {process_utils.py:189} INFO -   seeder FromAppData(download=False, pip=bundle, setuptools=bundle, wheel=bundle, via=copy, app_data_dir=/home/***/.local/share/virtualenv)
+[2023-06-23T21:32:18.812+0000] {process_utils.py:189} INFO -     added seed packages: pip==23.1.2, setuptools==67.7.2, wheel==0.40.0
+[2023-06-23T21:32:18.812+0000] {process_utils.py:189} INFO -   activators BashActivator,CShellActivator,FishActivator,NushellActivator,PowerShellActivator,PythonActivator
+[2023-06-23T21:32:18.826+0000] {process_utils.py:181} INFO - Executing cmd: /tmp/venv5sn2vrax/bin/pip install -r /tmp/venv5sn2vrax/requirements.txt
+[2023-06-23T21:32:18.830+0000] {process_utils.py:185} INFO - Output:
+[2023-06-23T21:32:19.922+0000] {process_utils.py:189} INFO - Collecting google-cloud-storage (from -r /tmp/venv5sn2vrax/requirements.txt (line 1))
+[2023-06-23T21:32:19.924+0000] {process_utils.py:189} INFO -   Using cached google_cloud_storage-2.9.0-py2.py3-none-any.whl (113 kB)
+[2023-06-23T21:32:19.983+0000] {process_utils.py:189} INFO - Collecting google-auth<3.0dev,>=1.25.0 (from google-cloud-storage->-r /tmp/venv5sn2vrax/requirements.txt (line 1))
+[2023-06-23T21:32:19.985+0000] {process_utils.py:189} INFO -   Using cached google_auth-2.20.0-py2.py3-none-any.whl (181 kB)
+[2023-06-23T21:32:20.037+0000] {process_utils.py:189} INFO - Collecting google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0dev,>=1.31.5 (from google-cloud-storage->-r /tmp/venv5sn2vrax/requirements.txt (line 1))
+[2023-06-23T21:32:20.038+0000] {process_utils.py:189} INFO -   Using cached google_api_core-2.11.1-py3-none-any.whl (120 kB)
+[2023-06-23T21:32:20.064+0000] {process_utils.py:189} INFO - Collecting google-cloud-core<3.0dev,>=2.3.0 (from google-cloud-storage->-r /tmp/venv5sn2vrax/requirements.txt (line 1))
+[2023-06-23T21:32:20.065+0000] {process_utils.py:189} INFO -   Using cached google_cloud_core-2.3.2-py2.py3-none-any.whl (29 kB)
+[2023-06-23T21:32:20.094+0000] {process_utils.py:189} INFO - Collecting google-resumable-media>=2.3.2 (from google-cloud-storage->-r /tmp/venv5sn2vrax/requirements.txt (line 1))
+[2023-06-23T21:32:20.096+0000] {process_utils.py:189} INFO -   Using cached google_resumable_media-2.5.0-py2.py3-none-any.whl (77 kB)
+[2023-06-23T21:32:20.134+0000] {process_utils.py:189} INFO - Collecting requests<3.0.0dev,>=2.18.0 (from google-cloud-storage->-r /tmp/venv5sn2vrax/requirements.txt (line 1))
+[2023-06-23T21:32:20.136+0000] {process_utils.py:189} INFO -   Using cached requests-2.31.0-py3-none-any.whl (62 kB)
+[2023-06-23T21:32:20.185+0000] {process_utils.py:189} INFO - Collecting googleapis-common-protos<2.0.dev0,>=1.56.2 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0dev,>=1.31.5->google-cloud-storage->-r /tmp/venv5sn2vrax/requirements.txt (line 1))
+[2023-06-23T21:32:20.191+0000] {process_utils.py:189} INFO -   Using cached googleapis_common_protos-1.59.1-py2.py3-none-any.whl (224 kB)
+[2023-06-23T21:32:20.531+0000] {process_utils.py:189} INFO - Collecting protobuf!=3.20.0,!=3.20.1,!=4.21.0,!=4.21.1,!=4.21.2,!=4.21.3,!=4.21.4,!=4.21.5,<5.0.0.dev0,>=3.19.5 (from google-api-core!=2.0.*,!=2.1.*,!=2.2.*,!=2.3.0,<3.0.0dev,>=1.31.5->google-cloud-storage->-r /tmp/venv5sn2vrax/requirements.txt (line 1))
+[2023-06-23T21:32:20.533+0000] {process_utils.py:189} INFO -   Using cached protobuf-4.23.3-cp37-abi3-manylinux2014_aarch64.whl (303 kB)
+[2023-06-23T21:32:20.683+0000] {process_utils.py:189} INFO - Collecting cachetools<6.0,>=2.0.0 (from google-auth<3.0dev,>=1.25.0->google-cloud-storage->-r /tmp/venv5sn2vrax/requirements.txt (line 1))
+[2023-06-23T21:32:20.685+0000] {process_utils.py:189} INFO -   Using cached cachetools-5.3.1-py3-none-any.whl (9.3 kB)
+[2023-06-23T21:32:20.748+0000] {process_utils.py:189} INFO - Collecting pyasn1-modules>=0.2.1 (from google-auth<3.0dev,>=1.25.0->google-cloud-storage->-r /tmp/venv5sn2vrax/requirements.txt (line 1))
+[2023-06-23T21:32:20.751+0000] {process_utils.py:189} INFO -   Using cached pyasn1_modules-0.3.0-py2.py3-none-any.whl (181 kB)
+[2023-06-23T21:32:20.860+0000] {process_utils.py:189} INFO - Collecting rsa<5,>=3.1.4 (from google-auth<3.0dev,>=1.25.0->google-cloud-storage->-r /tmp/venv5sn2vrax/requirements.txt (line 1))
+[2023-06-23T21:32:20.861+0000] {process_utils.py:189} INFO -   Using cached rsa-4.9-py3-none-any.whl (34 kB)
+[2023-06-23T21:32:20.888+0000] {process_utils.py:189} INFO - Collecting six>=1.9.0 (from google-auth<3.0dev,>=1.25.0->google-cloud-storage->-r /tmp/venv5sn2vrax/requirements.txt (line 1))
+[2023-06-23T21:32:20.889+0000] {process_utils.py:189} INFO -   Using cached six-1.16.0-py2.py3-none-any.whl (11 kB)
+[2023-06-23T21:32:20.930+0000] {process_utils.py:189} INFO - Collecting urllib3<2.0 (from google-auth<3.0dev,>=1.25.0->google-cloud-storage->-r /tmp/venv5sn2vrax/requirements.txt (line 1))
+[2023-06-23T21:32:20.933+0000] {process_utils.py:189} INFO -   Using cached urllib3-1.26.16-py2.py3-none-any.whl (143 kB)
+[2023-06-23T21:32:20.990+0000] {process_utils.py:189} INFO - Collecting google-crc32c<2.0dev,>=1.0 (from google-resumable-media>=2.3.2->google-cloud-storage->-r /tmp/venv5sn2vrax/requirements.txt (line 1))
+[2023-06-23T21:32:20.991+0000] {process_utils.py:189} INFO -   Using cached google_crc32c-1.5.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (32 kB)
+[2023-06-23T21:32:21.044+0000] {process_utils.py:189} INFO - Collecting charset-normalizer<4,>=2 (from requests<3.0.0dev,>=2.18.0->google-cloud-storage->-r /tmp/venv5sn2vrax/requirements.txt (line 1))
+[2023-06-23T21:32:21.046+0000] {process_utils.py:189} INFO -   Using cached charset_normalizer-3.1.0-cp311-cp311-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (193 kB)
+[2023-06-23T21:32:21.076+0000] {process_utils.py:189} INFO - Collecting idna<4,>=2.5 (from requests<3.0.0dev,>=2.18.0->google-cloud-storage->-r /tmp/venv5sn2vrax/requirements.txt (line 1))
+[2023-06-23T21:32:21.078+0000] {process_utils.py:189} INFO -   Using cached idna-3.4-py3-none-any.whl (61 kB)
+[2023-06-23T21:32:21.104+0000] {process_utils.py:189} INFO - Collecting certifi>=2017.4.17 (from requests<3.0.0dev,>=2.18.0->google-cloud-storage->-r /tmp/venv5sn2vrax/requirements.txt (line 1))
+[2023-06-23T21:32:21.106+0000] {process_utils.py:189} INFO -   Using cached certifi-2023.5.7-py3-none-any.whl (156 kB)
+[2023-06-23T21:32:21.172+0000] {process_utils.py:189} INFO - Collecting pyasn1<0.6.0,>=0.4.6 (from pyasn1-modules>=0.2.1->google-auth<3.0dev,>=1.25.0->google-cloud-storage->-r /tmp/venv5sn2vrax/requirements.txt (line 1))
+[2023-06-23T21:32:21.175+0000] {process_utils.py:189} INFO -   Using cached pyasn1-0.5.0-py2.py3-none-any.whl (83 kB)
+[2023-06-23T21:32:21.267+0000] {process_utils.py:189} INFO - Installing collected packages: urllib3, six, pyasn1, protobuf, idna, google-crc32c, charset-normalizer, certifi, cachetools, rsa, requests, pyasn1-modules, googleapis-common-protos, google-resumable-media, google-auth, google-api-core, google-cloud-core, google-cloud-storage
+[2023-06-23T21:32:21.829+0000] {process_utils.py:189} INFO - Successfully installed cachetools-5.3.1 certifi-2023.5.7 charset-normalizer-3.1.0 google-api-core-2.11.1 google-auth-2.20.0 google-cloud-core-2.3.2 google-cloud-storage-2.9.0 google-crc32c-1.5.0 google-resumable-media-2.5.0 googleapis-common-protos-1.59.1 idna-3.4 protobuf-4.23.3 pyasn1-0.5.0 pyasn1-modules-0.3.0 requests-2.31.0 rsa-4.9 six-1.16.0 urllib3-1.26.16
+[2023-06-23T21:32:21.997+0000] {process_utils.py:181} INFO - Executing cmd: /tmp/venv5sn2vrax/bin/python /tmp/venv5sn2vrax/script.py /tmp/venv5sn2vrax/script.in /tmp/venv5sn2vrax/script.out /tmp/venv5sn2vrax/string_args.txt
+[2023-06-23T21:32:21.999+0000] {process_utils.py:185} INFO - Output:
+[2023-06-23T21:32:22.399+0000] {process_utils.py:189} INFO - Traceback (most recent call last):
+[2023-06-23T21:32:22.400+0000] {process_utils.py:189} INFO -   File "/tmp/venv5sn2vrax/script.py", line 44, in <module>
+[2023-06-23T21:32:22.401+0000] {process_utils.py:189} INFO -     res = clean_files(*arg_dict["args"], **arg_dict["kwargs"])
+[2023-06-23T21:32:22.402+0000] {process_utils.py:189} INFO -           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2023-06-23T21:32:22.403+0000] {process_utils.py:189} INFO -   File "/tmp/venv5sn2vrax/script.py", line 27, in clean_files
+[2023-06-23T21:32:22.403+0000] {process_utils.py:189} INFO -     a = BaseHook()
+[2023-06-23T21:32:22.404+0000] {process_utils.py:189} INFO -         ^^^^^^^^
+[2023-06-23T21:32:22.405+0000] {process_utils.py:189} INFO - NameError: name 'BaseHook' is not defined
+[2023-06-23T21:32:22.467+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/decorators/base.py", line 220, in execute
+    return_value = super().execute(context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 374, in execute
+    return super().execute(context=serializable_context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 578, in execute_callable
+    result = self._execute_python_callable_in_subprocess(python_path, tmp_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 428, in _execute_python_callable_in_subprocess
+    execute_in_subprocess(
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/process_utils.py", line 170, in execute_in_subprocess
+    execute_in_subprocess_with_kwargs(cmd, cwd=cwd)
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/utils/process_utils.py", line 193, in execute_in_subprocess_with_kwargs
+    raise subprocess.CalledProcessError(exit_code, cmd)
+subprocess.CalledProcessError: Command '['/tmp/venv5sn2vrax/bin/python', '/tmp/venv5sn2vrax/script.py', '/tmp/venv5sn2vrax/script.in', '/tmp/venv5sn2vrax/script.out', '/tmp/venv5sn2vrax/string_args.txt']' returned non-zero exit status 1.
+[2023-06-23T21:32:22.479+0000] {taskinstance.py:1345} INFO - Marking task as FAILED. dag_id=running-buses-clean-files-dag, task_id=clean-gcp-files, execution_date=20230623T212914, start_date=20230623T213218, end_date=20230623T213222
+[2023-06-23T21:32:22.489+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 521 for task clean-gcp-files (Command '['/tmp/venv5sn2vrax/bin/python', '/tmp/venv5sn2vrax/script.py', '/tmp/venv5sn2vrax/script.in', '/tmp/venv5sn2vrax/script.out', '/tmp/venv5sn2vrax/string_args.txt']' returned non-zero exit status 1.; 423)
+[2023-06-23T21:32:22.530+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-06-23T21:32:22.550+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

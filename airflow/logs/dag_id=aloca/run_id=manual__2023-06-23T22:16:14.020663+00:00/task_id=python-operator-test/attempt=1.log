@@ -1,0 +1,26 @@
+[2023-06-23T22:16:15.991+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: aloca.python-operator-test manual__2023-06-23T22:16:14.020663+00:00 [queued]>
+[2023-06-23T22:16:15.997+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: aloca.python-operator-test manual__2023-06-23T22:16:14.020663+00:00 [queued]>
+[2023-06-23T22:16:15.998+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-06-23T22:16:16.004+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): python-operator-test> on 2023-06-23 22:16:14.020663+00:00
+[2023-06-23T22:16:16.010+0000] {standard_task_runner.py:57} INFO - Started process 1048 to run task
+[2023-06-23T22:16:16.015+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'aloca', 'python-operator-test', 'manual__2023-06-23T22:16:14.020663+00:00', '--job-id', '525', '--raw', '--subdir', 'DAGS_FOLDER/aloca.py', '--cfg-path', '/tmp/tmpt1km5opk']
+[2023-06-23T22:16:16.018+0000] {standard_task_runner.py:85} INFO - Job 525: Subtask python-operator-test
+[2023-06-23T22:16:16.083+0000] {task_command.py:410} INFO - Running <TaskInstance: aloca.python-operator-test manual__2023-06-23T22:16:14.020663+00:00 [running]> on host 6bba1fead03c
+[2023-06-23T22:16:16.265+0000] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='aloca' AIRFLOW_CTX_TASK_ID='python-operator-test' AIRFLOW_CTX_EXECUTION_DATE='2023-06-23T22:16:14.020663+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-06-23T22:16:14.020663+00:00'
+[2023-06-23T22:16:16.296+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-06-23T22:16:16.309+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/aloca.py", line 17, in test
+    print('eitaaaaa', conn.get_extra()['key_path'])
+                      ~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+[2023-06-23T22:16:16.333+0000] {taskinstance.py:1345} INFO - Marking task as FAILED. dag_id=aloca, task_id=python-operator-test, execution_date=20230623T221614, start_date=20230623T221615, end_date=20230623T221616
+[2023-06-23T22:16:16.349+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 525 for task python-operator-test (string indices must be integers, not 'str'; 1048)
+[2023-06-23T22:16:16.400+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-06-23T22:16:16.421+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

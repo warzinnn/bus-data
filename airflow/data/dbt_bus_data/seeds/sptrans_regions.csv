@@ -1,0 +1,10 @@
+region_id,region_name,region_color
+1,northwest,green
+2,north,dark-blue
+3,northeast,yellow
+4,east,red
+5,southeast,green
+6,south,light-blue
+7,southwest,brown
+8,west,orange
+9,misc,gray

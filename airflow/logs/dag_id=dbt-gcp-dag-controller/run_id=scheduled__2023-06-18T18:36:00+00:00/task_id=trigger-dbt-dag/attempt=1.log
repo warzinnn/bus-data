@@ -1,0 +1,12 @@
+[2023-06-18T18:39:03.021+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: dbt-gcp-dag-controller.trigger-dbt-dag scheduled__2023-06-18T18:36:00+00:00 [queued]>
+[2023-06-18T18:39:03.027+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: dbt-gcp-dag-controller.trigger-dbt-dag scheduled__2023-06-18T18:36:00+00:00 [queued]>
+[2023-06-18T18:39:03.028+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-06-18T18:39:03.034+0000] {taskinstance.py:1327} INFO - Executing <Task(TriggerDagRunOperator): trigger-dbt-dag> on 2023-06-18 18:36:00+00:00
+[2023-06-18T18:39:03.039+0000] {standard_task_runner.py:57} INFO - Started process 3487 to run task
+[2023-06-18T18:39:03.045+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'dbt-gcp-dag-controller', 'trigger-dbt-dag', 'scheduled__2023-06-18T18:36:00+00:00', '--job-id', '95', '--raw', '--subdir', 'DAGS_FOLDER/dbt_gcp_controller.py', '--cfg-path', '/tmp/tmpku8hjkuv']
+[2023-06-18T18:39:03.050+0000] {standard_task_runner.py:85} INFO - Job 95: Subtask trigger-dbt-dag
+[2023-06-18T18:39:03.098+0000] {task_command.py:410} INFO - Running <TaskInstance: dbt-gcp-dag-controller.trigger-dbt-dag scheduled__2023-06-18T18:36:00+00:00 [running]> on host 6bba1fead03c
+[2023-06-18T18:39:03.158+0000] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='dbt-gcp-dag-controller' AIRFLOW_CTX_TASK_ID='trigger-dbt-dag' AIRFLOW_CTX_EXECUTION_DATE='2023-06-18T18:36:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2023-06-18T18:36:00+00:00'
+[2023-06-18T18:39:03.229+0000] {taskinstance.py:1345} INFO - Marking task as SUCCESS. dag_id=dbt-gcp-dag-controller, task_id=trigger-dbt-dag, execution_date=20230618T183600, start_date=20230618T183903, end_date=20230618T183903
+[2023-06-18T18:39:03.264+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-06-18T18:39:03.290+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

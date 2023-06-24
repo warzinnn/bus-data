@@ -1,0 +1,14 @@
+[2023-06-15T14:46:22.053+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: gcs-files-dag.GCS_Files manual__2023-06-15T14:40:50.289983+00:00 [queued]>
+[2023-06-15T14:46:22.059+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: gcs-files-dag.GCS_Files manual__2023-06-15T14:40:50.289983+00:00 [queued]>
+[2023-06-15T14:46:22.060+0000] {taskinstance.py:1308} INFO - Starting attempt 3 of 3
+[2023-06-15T14:46:22.072+0000] {taskinstance.py:1327} INFO - Executing <Task(GCSListObjectsOperator): GCS_Files> on 2023-06-15 14:40:50.289983+00:00
+[2023-06-15T14:46:22.079+0000] {standard_task_runner.py:57} INFO - Started process 652 to run task
+[2023-06-15T14:46:22.085+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'gcs-files-dag', 'GCS_Files', 'manual__2023-06-15T14:40:50.289983+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/gcp_test.py', '--cfg-path', '/tmp/tmpwxzybq0e']
+[2023-06-15T14:46:22.091+0000] {standard_task_runner.py:85} INFO - Job 11: Subtask GCS_Files
+[2023-06-15T14:46:22.164+0000] {task_command.py:410} INFO - Running <TaskInstance: gcs-files-dag.GCS_Files manual__2023-06-15T14:40:50.289983+00:00 [running]> on host 6f3c5cb11aa3
+[2023-06-15T14:46:22.246+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='gcs-files-dag' AIRFLOW_CTX_TASK_ID='GCS_Files' AIRFLOW_CTX_EXECUTION_DATE='2023-06-15T14:40:50.289983+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-06-15T14:40:50.289983+00:00'
+[2023-06-15T14:46:22.258+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-06-15T14:46:22.259+0000] {gcs.py:233} INFO - Getting list of the files. Bucket: data_lake_bus_data_bus-data-389717; Delimiter: .parquet; Prefix: /
+[2023-06-15T14:46:22.728+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=gcs-files-dag, task_id=GCS_Files, execution_date=20230615T144050, start_date=20230615T144622, end_date=20230615T144622
+[2023-06-15T14:46:22.783+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-06-15T14:46:22.803+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

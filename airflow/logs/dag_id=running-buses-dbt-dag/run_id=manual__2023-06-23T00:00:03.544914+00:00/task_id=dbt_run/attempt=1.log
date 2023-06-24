@@ -1,0 +1,31 @@
+[2023-06-23T00:00:05.092+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: running-buses-dbt-dag.dbt_run manual__2023-06-23T00:00:03.544914+00:00 [queued]>
+[2023-06-23T00:00:05.100+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: running-buses-dbt-dag.dbt_run manual__2023-06-23T00:00:03.544914+00:00 [queued]>
+[2023-06-23T00:00:05.102+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-06-23T00:00:05.110+0000] {taskinstance.py:1327} INFO - Executing <Task(DbtRunOperator): dbt_run> on 2023-06-23 00:00:03.544914+00:00
+[2023-06-23T00:00:05.116+0000] {standard_task_runner.py:57} INFO - Started process 8931 to run task
+[2023-06-23T00:00:05.120+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'running-buses-dbt-dag', 'dbt_run', 'manual__2023-06-23T00:00:03.544914+00:00', '--job-id', '502', '--raw', '--subdir', 'DAGS_FOLDER/running_buses_dbt_dag.py', '--cfg-path', '/tmp/tmpl5kqmtdh']
+[2023-06-23T00:00:05.124+0000] {standard_task_runner.py:85} INFO - Job 502: Subtask dbt_run
+[2023-06-23T00:00:05.175+0000] {task_command.py:410} INFO - Running <TaskInstance: running-buses-dbt-dag.dbt_run manual__2023-06-23T00:00:03.544914+00:00 [running]> on host 6bba1fead03c
+[2023-06-23T00:00:05.242+0000] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='running-buses-dbt-dag' AIRFLOW_CTX_TASK_ID='dbt_run' AIRFLOW_CTX_EXECUTION_DATE='2023-06-23T00:00:03.544914+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-06-23T00:00:03.544914+00:00'
+[2023-06-23T00:00:05.244+0000] {dbt_hook.py:117} INFO - dbt run --profiles-dir /opt/***/tmp_data/dbt_bus_data/.dbt_profile --select stg_running_buses
+[2023-06-23T00:00:05.246+0000] {dbt_hook.py:126} INFO - Output:
+[2023-06-23T00:00:06.950+0000] {dbt_hook.py:130} INFO - [0m00:00:06  Running with dbt=1.5.1
+[2023-06-23T00:00:07.557+0000] {dbt_hook.py:130} INFO - [0m00:00:07  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2023-06-23T00:00:07.558+0000] {dbt_hook.py:130} INFO - There are 1 unused configuration paths:
+[2023-06-23T00:00:07.558+0000] {dbt_hook.py:130} INFO - - models.dbt_bus_data.core
+[2023-06-23T00:00:07.619+0000] {dbt_hook.py:130} INFO - [0m00:00:07  Found 1 model, 9 tests, 0 snapshots, 0 analyses, 356 macros, 0 operations, 3 seed files, 2 sources, 0 exposures, 0 metrics, 0 groups
+[2023-06-23T00:00:07.630+0000] {dbt_hook.py:130} INFO - [0m00:00:07
+[2023-06-23T00:00:08.804+0000] {dbt_hook.py:130} INFO - [0m00:00:08  Concurrency: 2 threads (target='dev')
+[2023-06-23T00:00:08.807+0000] {dbt_hook.py:130} INFO - [0m00:00:08
+[2023-06-23T00:00:08.836+0000] {dbt_hook.py:130} INFO - [0m00:00:08  1 of 1 START sql view model dbt_busdata_stag.stg_running_buses ................. [RUN]
+[2023-06-23T00:00:10.101+0000] {dbt_hook.py:130} INFO - [0m00:00:10  1 of 1 OK created sql view model dbt_busdata_stag.stg_running_buses ............ [[32mCREATE VIEW (0 processed)[0m in 1.26s]
+[2023-06-23T00:00:10.113+0000] {dbt_hook.py:130} INFO - [0m00:00:10
+[2023-06-23T00:00:10.116+0000] {dbt_hook.py:130} INFO - [0m00:00:10  Finished running 1 view model in 0 hours 0 minutes and 2.48 seconds (2.48s).
+[2023-06-23T00:00:10.177+0000] {dbt_hook.py:130} INFO - [0m00:00:10
+[2023-06-23T00:00:10.204+0000] {dbt_hook.py:130} INFO - [0m00:00:10  [32mCompleted successfully[0m
+[2023-06-23T00:00:10.207+0000] {dbt_hook.py:130} INFO - [0m00:00:10
+[2023-06-23T00:00:10.214+0000] {dbt_hook.py:130} INFO - [0m00:00:10  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[2023-06-23T00:00:11.351+0000] {dbt_hook.py:132} INFO - Command exited with return code 0
+[2023-06-23T00:00:11.369+0000] {taskinstance.py:1345} INFO - Marking task as SUCCESS. dag_id=running-buses-dbt-dag, task_id=dbt_run, execution_date=20230623T000003, start_date=20230623T000005, end_date=20230623T000011
+[2023-06-23T00:00:11.417+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-06-23T00:00:11.436+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,23 @@
+[2023-06-15T19:23:44.468+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: gcs-files-dag.update_table manual__2023-06-15T19:23:41.146291+00:00 [queued]>
+[2023-06-15T19:23:44.476+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: gcs-files-dag.update_table manual__2023-06-15T19:23:41.146291+00:00 [queued]>
+[2023-06-15T19:23:44.478+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-06-15T19:23:44.490+0000] {taskinstance.py:1327} INFO - Executing <Task(BigQueryUpdateTableOperator): update_table> on 2023-06-15 19:23:41.146291+00:00
+[2023-06-15T19:23:44.497+0000] {standard_task_runner.py:57} INFO - Started process 5583 to run task
+[2023-06-15T19:23:44.503+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'gcs-files-dag', 'update_table', 'manual__2023-06-15T19:23:41.146291+00:00', '--job-id', '56', '--raw', '--subdir', 'DAGS_FOLDER/gcp_test.py', '--cfg-path', '/tmp/tmpsvlx9f4_']
+[2023-06-15T19:23:44.504+0000] {standard_task_runner.py:85} INFO - Job 56: Subtask update_table
+[2023-06-15T19:23:44.554+0000] {task_command.py:410} INFO - Running <TaskInstance: gcs-files-dag.update_table manual__2023-06-15T19:23:41.146291+00:00 [running]> on host 6f3c5cb11aa3
+[2023-06-15T19:23:44.635+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='gcs-files-dag' AIRFLOW_CTX_TASK_ID='update_table' AIRFLOW_CTX_EXECUTION_DATE='2023-06-15T19:23:41.146291+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-06-15T19:23:41.146291+00:00'
+[2023-06-15T19:23:44.646+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-06-15T19:23:44.695+0000] {taskinstance.py:1824} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/operators/bigquery.py", line 2128, in execute
+    project_id=self.project_id,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/common/hooks/base_google.py", line 468, in inner_wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/google/cloud/hooks/bigquery.py", line 714, in update_table
+    fields = fields or list(table_resource.keys())
+AttributeError: 'list' object has no attribute 'keys'
+[2023-06-15T19:23:44.706+0000] {taskinstance.py:1350} INFO - Marking task as FAILED. dag_id=gcs-files-dag, task_id=update_table, execution_date=20230615T192341, start_date=20230615T192344, end_date=20230615T192344
+[2023-06-15T19:23:44.714+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 56 for task update_table ('list' object has no attribute 'keys'; 5583)
+[2023-06-15T19:23:44.758+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 1
+[2023-06-15T19:23:44.776+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,13 @@
+[2023-06-15T18:41:38.170+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: gcs-files-dag.create_external_table manual__2023-06-15T18:41:04.605495+00:00 [queued]>
+[2023-06-15T18:41:38.176+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: gcs-files-dag.create_external_table manual__2023-06-15T18:41:04.605495+00:00 [queued]>
+[2023-06-15T18:41:38.177+0000] {taskinstance.py:1308} INFO - Starting attempt 2 of 2
+[2023-06-15T18:41:38.185+0000] {taskinstance.py:1327} INFO - Executing <Task(BigQueryCreateExternalTableOperator): create_external_table> on 2023-06-15 18:41:04.605495+00:00
+[2023-06-15T18:41:38.191+0000] {standard_task_runner.py:57} INFO - Started process 4844 to run task
+[2023-06-15T18:41:38.195+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'gcs-files-dag', 'create_external_table', 'manual__2023-06-15T18:41:04.605495+00:00', '--job-id', '55', '--raw', '--subdir', 'DAGS_FOLDER/gcp_test.py', '--cfg-path', '/tmp/tmpuanfuq46']
+[2023-06-15T18:41:38.197+0000] {standard_task_runner.py:85} INFO - Job 55: Subtask create_external_table
+[2023-06-15T18:41:38.246+0000] {task_command.py:410} INFO - Running <TaskInstance: gcs-files-dag.create_external_table manual__2023-06-15T18:41:04.605495+00:00 [running]> on host 6f3c5cb11aa3
+[2023-06-15T18:41:38.313+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='gcs-files-dag' AIRFLOW_CTX_TASK_ID='create_external_table' AIRFLOW_CTX_EXECUTION_DATE='2023-06-15T18:41:04.605495+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-06-15T18:41:04.605495+00:00'
+[2023-06-15T18:41:38.324+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-06-15T18:41:39.089+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=gcs-files-dag, task_id=create_external_table, execution_date=20230615T184104, start_date=20230615T184138, end_date=20230615T184139
+[2023-06-15T18:41:39.146+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-06-15T18:41:39.163+0000] {taskinstance.py:2651} INFO - 0 downstream tasks scheduled from follow-on schedule check

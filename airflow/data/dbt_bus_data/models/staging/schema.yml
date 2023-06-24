@@ -1,0 +1,119 @@
+version: 2
+sources:
+  - name: staging
+    database: bus-data-389717
+    schema: dbt_busdata_stag
+    tables:
+      - name: external_table_buss
+      - name: external_table_running_buses
+
+models:
+  - name: stg_garage_buses
+    columns:
+      - name: company_name
+        description: >
+          name of company
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: agg_code_company_code
+        description: >
+          aggregation of code area operation from companies that operates under sptrans.
+          one company can operate in more than one region of Sao Paulo.
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: agg_region_name
+        description: >
+          aggregation of region name from companies that operates under sptrans.
+          one company can operate in more than one region of Sao Paulo.
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: agg_region_color
+        description: >
+          aggregation of region color from companies that operates under sptrans.
+          one company can operate in more than one region of Sao Paulo.
+          the colors are used to identify the regions in the sptrans map.
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: total_stopped_buses
+        description: >
+          the number of buses that are stopped in the company garage (not operating)
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: timestamp
+        description: >
+          timestamp of sptrans api query
+        tests:
+          - not_null:
+              config:
+                severity: warn
+  - name: stg_running_buses
+    columns:
+      - name: line_name
+        description: >
+          Bus line name
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: line_number
+        description: >
+          Bus line number
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: company_name
+        description: >
+          name of company
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: region_id
+        description: >
+          region id where the given company operates
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: region_name
+        description: >
+          region name where the given company operates
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: region_color
+        description: >
+          region color name where the given company operates
+        tests:
+          - not_null
+          - accepted_values: 
+              values: ['green', 'dark-blue', 'yellow', 'red', 'green', 'light-blue', 'brown', 'orange', 'gray'] 
+              config:
+                severity: warn
+      - name: qtd_running_buses
+        description: >
+          the quantity number of live running buses of the given line
+        tests:
+          - not_null:
+              config:
+                severity: warn
+      - name: timestamp
+        description: >
+          timestamp of sptrans api query
+        tests:
+          - not_null:
+              config:
+                severity: warn
+        

@@ -1,0 +1,15 @@
+[2023-06-16T16:54:39.088+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: gcs-files-dag.delete_table manual__2023-06-16T16:54:33.320500+00:00 [queued]>
+[2023-06-16T16:54:39.094+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: gcs-files-dag.delete_table manual__2023-06-16T16:54:33.320500+00:00 [queued]>
+[2023-06-16T16:54:39.094+0000] {taskinstance.py:1308} INFO - Starting attempt 1 of 1
+[2023-06-16T16:54:39.103+0000] {taskinstance.py:1327} INFO - Executing <Task(BigQueryDeleteTableOperator): delete_table> on 2023-06-16 16:54:33.320500+00:00
+[2023-06-16T16:54:39.109+0000] {standard_task_runner.py:57} INFO - Started process 62 to run task
+[2023-06-16T16:54:39.115+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'gcs-files-dag', 'delete_table', 'manual__2023-06-16T16:54:33.320500+00:00', '--job-id', '83', '--raw', '--subdir', 'DAGS_FOLDER/gcp_test.py', '--cfg-path', '/tmp/tmpkgzmrvix']
+[2023-06-16T16:54:39.116+0000] {standard_task_runner.py:85} INFO - Job 83: Subtask delete_table
+[2023-06-16T16:54:39.159+0000] {task_command.py:410} INFO - Running <TaskInstance: gcs-files-dag.delete_table manual__2023-06-16T16:54:33.320500+00:00 [running]> on host 5c5cb2ceadff
+[2023-06-16T16:54:39.245+0000] {taskinstance.py:1547} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='gcs-files-dag' AIRFLOW_CTX_TASK_ID='delete_table' AIRFLOW_CTX_EXECUTION_DATE='2023-06-16T16:54:33.320500+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-06-16T16:54:33.320500+00:00'
+[2023-06-16T16:54:39.248+0000] {bigquery.py:2274} INFO - Deleting: bus-data-389717.dbt_busdata_stag.external_table_bus
+[2023-06-16T16:54:39.279+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-06-16T16:54:39.817+0000] {bigquery.py:1196} INFO - Deleted table bus-data-389717.dbt_busdata_stag.external_table_bus
+[2023-06-16T16:54:39.827+0000] {taskinstance.py:1350} INFO - Marking task as SUCCESS. dag_id=gcs-files-dag, task_id=delete_table, execution_date=20230616T165433, start_date=20230616T165439, end_date=20230616T165439
+[2023-06-16T16:54:39.864+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-06-16T16:54:39.884+0000] {taskinstance.py:2651} INFO - 1 downstream tasks scheduled from follow-on schedule check

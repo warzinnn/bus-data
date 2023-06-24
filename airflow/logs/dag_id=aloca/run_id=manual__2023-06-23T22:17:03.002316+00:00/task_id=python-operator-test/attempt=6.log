@@ -1,0 +1,15 @@
+[2023-06-23T22:18:36.144+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: aloca.python-operator-test manual__2023-06-23T22:17:03.002316+00:00 [queued]>
+[2023-06-23T22:18:36.151+0000] {taskinstance.py:1103} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: aloca.python-operator-test manual__2023-06-23T22:17:03.002316+00:00 [queued]>
+[2023-06-23T22:18:36.152+0000] {taskinstance.py:1308} INFO - Starting attempt 6 of 6
+[2023-06-23T22:18:36.160+0000] {taskinstance.py:1327} INFO - Executing <Task(PythonOperator): python-operator-test> on 2023-06-23 22:17:03.002316+00:00
+[2023-06-23T22:18:36.166+0000] {standard_task_runner.py:57} INFO - Started process 1097 to run task
+[2023-06-23T22:18:36.170+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'aloca', 'python-operator-test', 'manual__2023-06-23T22:17:03.002316+00:00', '--job-id', '532', '--raw', '--subdir', 'DAGS_FOLDER/aloca.py', '--cfg-path', '/tmp/tmph80zmc2w']
+[2023-06-23T22:18:36.174+0000] {standard_task_runner.py:85} INFO - Job 532: Subtask python-operator-test
+[2023-06-23T22:18:36.236+0000] {task_command.py:410} INFO - Running <TaskInstance: aloca.python-operator-test manual__2023-06-23T22:17:03.002316+00:00 [running]> on host 6bba1fead03c
+[2023-06-23T22:18:36.323+0000] {taskinstance.py:1545} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='aloca' AIRFLOW_CTX_TASK_ID='python-operator-test' AIRFLOW_CTX_EXECUTION_DATE='2023-06-23T22:17:03.002316+00:00' AIRFLOW_CTX_TRY_NUMBER='6' AIRFLOW_CTX_DAG_RUN_ID='manual__2023-06-23T22:17:03.002316+00:00'
+[2023-06-23T22:18:36.335+0000] {base.py:73} INFO - Using connection ID 'google_cloud_default' for task execution.
+[2023-06-23T22:18:36.336+0000] {logging_mixin.py:149} INFO - eitaaaaa {
+[2023-06-23T22:18:36.337+0000] {python.py:183} INFO - Done. Returned value was: None
+[2023-06-23T22:18:36.348+0000] {taskinstance.py:1345} INFO - Marking task as SUCCESS. dag_id=aloca, task_id=python-operator-test, execution_date=20230623T221703, start_date=20230623T221836, end_date=20230623T221836
+[2023-06-23T22:18:36.387+0000] {local_task_job_runner.py:225} INFO - Task exited with return code 0
+[2023-06-23T22:18:36.403+0000] {taskinstance.py:2653} INFO - 0 downstream tasks scheduled from follow-on schedule check
