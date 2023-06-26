@@ -1,7 +1,7 @@
 import json
 import time
 
-from src.models.bus_company import GarageBusProducer
+from src.producer import BusProducer
 
 """
     File to run the Kafka producer
@@ -14,7 +14,7 @@ if __name__ == "__main__":
         "value_serializer": lambda x: json.dumps(x).encode("utf-8"),
         "acks": 1,
     }
-    producer = GarageBusProducer(producer_config)
+    producer = BusProducer(producer_config)
 
     topic = "running-buses"
 
