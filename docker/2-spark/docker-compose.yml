@@ -6,7 +6,7 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '../../src'
+      device: '../src'
 
 networks:
   kafka-spark-network:
@@ -19,7 +19,7 @@ services:
     container_name: spark-master
     hostname: spark-master
     ports:
-      - 8080:8080
+      - 9090:9090
       - 7077:7077
     volumes:
       - shared-workspace:/opt/workspace
@@ -27,6 +27,7 @@ services:
       - kafka-spark-network
     environment:
       - SPARK_LOCAL_IP=spark-master
+      - SPARK_MASTER_WEBUI_PORT=9090
   spark-worker-1:
     image: spark-worker
     container_name: spark-worker-1

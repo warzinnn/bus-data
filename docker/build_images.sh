@@ -1,3 +1,5 @@
+cd 2-spark
+
 docker build \
   -f 1-cluster-base.Dockerfile \
   -t cluster-base .
@@ -13,3 +15,9 @@ docker build \
 docker build \
   -f 4-spark-worker.Dockerfile \
   -t spark-worker .
+
+cd ../3-airflow
+
+docker build \
+  -f Dockerfile \
+  -t custom-airflow .
