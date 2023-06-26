@@ -20,6 +20,9 @@ from pyspark.sql.functions import (
     window,
 )
 
+BUCKET_NAME = "data_lake_bus_data_bus-data-389717"
+CREDENTIALS_PATH = "/opt/workspace/.google/bus-data-389717-3c31a20fe458.json"
+
 
 def read_data_from_kafka(topic_name: str):
     """Read data from kafka topic"""
@@ -139,7 +142,7 @@ def foreach_batch_function_save_file(df, epoch_id):
 
     # .option("header","true") \
     df.repartition(1).write.mode("append").csv(
-        f"gs://data_lake_bus_data_bus-data-389717/year={year}/month={month}/day={day}/hour={time}"
+        f"gs://{BUCKET_NAME}/year={year}/month={month}/day={day}/hour={time}"
     )
 
     rename_file_bucket(year, month, day, time, file_name_time)
@@ -260,13 +263,13 @@ def parse_from_sptrans(df):
 
 
 def rename_file_bucket(year, month, day, hour, file_name_time):
-    bucket_name = "data_lake_bus_data_bus-data-389717"
+    BUCKET_NAME = "data_lake_bus_data_bus-data-389717"
     file_prefix = f"year={year}/month={month}/day={day}/hour={hour}/part"
 
     storage_client = storage.Client()
 
-    bucket = storage_client.bucket(bucket_name)
-    blobs = storage_client.list_blobs(bucket_name, prefix=file_prefix)
+    bucket = storage_client.bucket(BUCKET_NAME)
+    blobs = storage_client.list_blobs(BUCKET_NAME, prefix=file_prefix)
 
     blob_file_name = [blob.name for blob in blobs][0]
 
@@ -309,7 +312,7 @@ def foreach_batch_function_save_file_running_buses(df, epoch_id):
     df.withColumn(
         "timestamp", from_utc_timestamp(current_timestamp(), "America/Sao_Paulo")
     ).repartition(1).write.mode("append").csv(
-        f"gs://data_lake_bus_data_bus-data-389717/running_buses/year={year}/month={month}/day={day}/hour={time}"
+        f"gs://{BUCKET_NAME}/running_buses/year={year}/month={month}/day={day}/hour={time}"
     )
 
 
@@ -344,7 +347,7 @@ if __name__ == "__main__":
         .set("spark.hadoop.google.cloud.auth.service.account.enable", "true")
         .set(
             "spark.hadoop.google.cloud.auth.service.account.json.keyfile",
-            "/opt/workspace/.google/bus-data-389717-3c31a20fe458.json",
+            f"{CREDENTIALS_PATH}",
         )
         .set("spark.sql.session.timeZone", "UTC")
     )
@@ -359,7 +362,7 @@ if __name__ == "__main__":
     )
     sc._jsc.hadoopConfiguration().set(
         "fs.gs.auth.service.account.json.keyfile",
-        "/opt/workspace/.google/bus-data-389717-3c31a20fe458.json",
+        f"{CREDENTIALS_PATH}",
     )
     sc._jsc.hadoopConfiguration().set("fs.gs.auth.service.account.enable", "true")
 
