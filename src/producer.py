@@ -9,8 +9,8 @@ from unidecode import unidecode
 from src.models.bus_company import BusCompany
 
 
-class GarageBusProducer:
-    """Class to define Kafka Producer for Buses in the companies garages."""
+class BusProducer:
+    """Class to define Kafka Producer for live running Buses"""
 
     def __init__(self, producer_config: Dict) -> None:
         self.producer = KafkaProducer(**producer_config)
@@ -36,7 +36,7 @@ class GarageBusProducer:
         Args:
             None
         Returns:
-            List[BusCompany]: List of buses companies that operates under SpTrans .
+            List[BusCompany]: List of buses companies that operates under SpTrans
         """
         api_credentials = self.__authenticate_with_external_api()
         r = requests.get(
