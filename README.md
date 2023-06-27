@@ -7,7 +7,7 @@ In this project, the creation and management of cloud resources (Google Cloud) w
 
 The Kafka producer will stream events generated from SPTRANS API every two minutes to the target topics, and the pyspark will handle the stream processing of real-time data. The processed data will be stored in data lake periodically (also every two minutes). From that, the DAGs from airflow will be triggered every three minutes to run the creation of tables in bigquery and do the data transformation with DBT, so, in the end the data will be available in Looker Studio for visualization.
 
-I also did a data scraping in sptrans API (`src/scrap_data.py`) to map from which company a bus-line is from, so the final information will be more understantable.
+I also did a data scraping in sptrans API (`src/scrap_data.py`) to map from which company a bus-line is from, so the final information will be more understandable.
 
 ### Pipeline Flow
 <img width="1179" alt="pipeline_flow" src="https://github.com/warzinnn/bus-data/assets/102708101/71ce756c-cdec-42d3-ac7e-0e71897cca22">
