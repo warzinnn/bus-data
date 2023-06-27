@@ -27,6 +27,7 @@ services:
       - kafka-spark-network
     environment:
       - SPARK_LOCAL_IP=spark-master
+      - GOOGLE_APPLICATION_CREDENTIALS=${GOOGLE_APPLICATION_CREDENTIALS}
       - SPARK_MASTER_WEBUI_PORT=9090
   spark-worker-1:
     image: spark-worker
@@ -59,6 +60,7 @@ services:
       - SPARK_EXECUTOR_MEMORY=1G
       - SPARK_WORKLOAD=worker
       - SPARK_LOCAL_IP=spark-worker-2
+      - GOOGLE_APPLICATION_CREDENTIALS=${GOOGLE_APPLICATION_CREDENTIALS}
     ports:
       - 8082:8081
     networks:
