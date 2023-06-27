@@ -19,19 +19,24 @@ Setup a Google Cloud account. (In my case i used the free trial account)
 Generate an developer SPTRANS API Key over [Sptrans-Site](https://www.sptrans.com.br/desenvolvedores)
 
 ### Configuring `.env` file
-
-In the `.env` file add the following environments:
+The `.env` file should be in the root folder and needs to contain the following environments:
 `SPTRANS_API_KEY=<KEY>`
 `GOOGLE_APPLICATION_CREDENTIALS=/opt/workspace/.google/<YOUR_JSON_FILE>`
 
-Create a folder to store the google credentials in two locations:
-1) Inside `src` folder (This folder will be mapped with VM).
-2) Inside the `airflow/data` folder.(It will be used by airflow application).  
+Add the google credentials json file in two locations:
+1) Inside `src/.google` folder (This folder will be mapped with VM).
+2) Inside the `airflow/data/.google` folder.(It will be used by airflow application).  
 
 Example:  
 `src/.google/<YOUR_JSON_FILE>`   
 `airflow/data/.google/<YOUR_JSON_FILE>`
 
+### Folder permissions
+- Give airflow folder permission to avoid errors.
+```
+cd <ROOT_PROJECT_FOLDER>
+sudo chmod -R u=rwx,g=rwx,o=rwx airflow/
+```
 
 ### Building docker images
 
@@ -85,8 +90,14 @@ docker exec -it spark-master /opt/spark/bin/spark-submit --packages org.apache.s
 - Also this profile should contain information about the google cloud account.
 
 ### Airflow
+First create the bigquery connection under connections menu. `Menu -> Admin -> Connections`. After that its possible to run the dags.
+
+<img width="600" alt="connection_config" src="https://github.com/warzinnn/bus-data/assets/102708101/7bfcd7c7-f7e7-45e3-8a06-baa948ae74eb">
+
 In the airflow there are 4 dags.
 - **running-buses-dag-controller** is responsible to coordenates all the others.
 - **running-buses-clean-files-dag** is responsible to clean invalid file in the data lake.
 - **running-buses-dbt-dag** is responsible to run the DBT.
 - **running-buses-gcs-files-dag** is responsible to create the external table in bigquery.
+
+<img width="600" alt="airflow_dags" src="https://github.com/warzinnn/bus-data/assets/102708101/bfe1b40f-9164-4bc7-b2ab-48220a810624">

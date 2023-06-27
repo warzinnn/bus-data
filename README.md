@@ -11,7 +11,7 @@ The Kafka producer will stream events generated from SPTRANS API every two minut
 <img width="1179" alt="pipeline_flow" src="https://github.com/warzinnn/bus-data/assets/102708101/71ce756c-cdec-42d3-ac7e-0e71897cca22">
 
 ### Looker Studio Visualization
-<img width="1020" alt="data_visualization" src="https://github.com/warzinnn/bus-data/assets/102708101/f67daaef-535f-4e7d-bbfc-532f0f985aa4">
+<img width="1020" alt="data_visualization" src="https://github.com/warzinnn/bus-data/assets/102708101/8838e4e4-832b-4d12-b3c6-ed198f05b862">
 
 ### Documentation
 - [**Config & Installation**](documentation.md)
