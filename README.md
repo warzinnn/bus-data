@@ -1,6 +1,6 @@
 # SP Bus Data - DE Project
 
-A data pipeline using a streaming dataset from SPTRANS API which is a company that manages the bus transportation system in some regions of São Paulo, Brazil. This project was realized for studies purposes.
+A data pipeline using a streaming dataset from SPTRANS API to get data from the currently running buses that operates in some regions of São Paulo (SPTRANS is a company that manages the bus transportation system in São Paulo, Brazil). This project was realized for studies purposes.
 
 ### Overview
 In this project, the creation and management of cloud resources (Google Cloud) was done with Terraform. The workflow orchestration was managed by Airflow, which coordenates the integration with GCS (data lake), DBT (data transformation) and BigQuery (data warehouse). The kafka, spark and airflow instances was containerized with docker and hosted in Google Compute Engine. The final data is served on Looker Studio.
