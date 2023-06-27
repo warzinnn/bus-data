@@ -6,6 +6,5 @@ __pycache__
 .terraform
 test.py
 .tmp
-.dbt_profile
 Pipfile
 Pipfile.lock
